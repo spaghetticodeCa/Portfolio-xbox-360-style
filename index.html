@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts -->
   </head>
   <body>
     <container class="container">
@@ -14,32 +22,102 @@
     </container>
     <div class="menuCont">
       <header class="header">
-        <h1 class="header__title">Xbox Live</h1>
+        <h1 class="header__title">Portfolio Tommy Audet</h1>
       </header>
       <main class="main">
         <div class="main__menu">
           <div class="account">
-            <p class="account__title">Sign In</p>
+            <p class="account__title">Profile</p>
             <div class="account__wrap">
               <img
                 class="account__picture"
                 src="http://tommyaudet.spaghetticode.ca/image/background/background0.jpg"
                 alt=""
               />
-              <p class="account__name">Tommy Audet</p>
+              <div class="account__wrap--text">
+                <p class="account__name">Tommy Audet</p>
+                <p class="account__desc">Programmer web</p>
+              </div>
             </div>
           </div>
-          <span class="main__line" /></span>
+          <div class="menu">
+            <a href="" class="menu__btn"
+              ><img class="menu__icon" src="icons/projectsIcon.svg" />
+              Projets</a
+            >
+            <a href="" class="menu__btn"
+              ><img class="menu__icon" src="icons/aboutMeIcon.svg" />À Propos</a
+            >
+            <a href="" class="menu__btn"
+              ><img class="menu__icon" src="icons/contactMe.svg" />Me
+              Contacter</a
+            >
+          </div>
+          <!-- <span class="main__line" /></span> -->
         </div>
-        <div class="main__info"></div>
+        <div class="info">
+          <div class="info__wrap info__wrap--col">
+            <h1 class="info__text--font1">MES</h1>
+            <h1 class="info__text--font2">COMPETENCES</h1>
+          </div>
+          <div class="info__wrap">
+            <ul class="info__list">
+              <li class="info__listItem">
+                <img class="info__icon" src="icons/htmlIcon.svg" alt="" /> HTML
+              </li>
+              <li class="info__listItem">
+                <img class="info__icon" src="icons/cssIcon.svg" alt="" />CSS
+              </li>
+              <li class="info__listItem">
+                <img
+                  class="info__icon"
+                  src="icons/javascriptIcon.svg"
+                  alt=""
+                />JAVASCRIPT
+              </li>
+              <li class="info__listItem">
+                <img
+                  class="info__icon"
+                  src="icons/reactIcon.svg"
+                  alt=""
+                />REACT.JS
+              </li>
+              <li class="info__listItem">
+                <img
+                  class="info__icon"
+                  src="icons/firebaseIcon.svg"
+                  alt=""
+                />FIREBASE
+              </li>
+            </ul>
+          </div>
+          <section class="vid">
+            <video
+              class="vid__video"
+              autoplay
+              loop
+              muted
+              src="videos/coding.mp4"
+            ></video>
+          </section>
+        </div>
       </main>
     </div>
   </body>
   <style>
+    @font-face {
+      font-family: "xbox360";
+      src: url("fonts/X360.ttf");
+    }
+    @font-face {
+      font-family: "ogXbox";
+      src: url("fonts/XboxLogoFont.ttf");
+    }
     * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
+      font-family: "Ubuntu", sans-serif;
     }
     html,
     body {
@@ -153,10 +231,23 @@
       padding: 1rem;
     }
     .account {
-      background: rgba(255, 255, 255, 0.3);
+      /* background: rgba(255, 255, 255, 0.3); */
       border-radius: 0.8rem;
       box-shadow: inset 0px 0px 1rem rgba(255, 255, 255, 0.5);
       border: solid 0.2rem rgba(88, 88, 88, 0.8);
+    }
+    .account:hover {
+      cursor: pointer;
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.678) 50%,
+        transparent
+      );
+      border-radius: 0.8rem;
+      box-shadow: inset 0px 0px 1rem rgba(255, 255, 255, 0.5);
+      border: solid 0.2rem rgba(88, 88, 88, 0.8);
+      box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
     }
     .account__title {
       background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent);
@@ -175,16 +266,104 @@
     }
     .account__name {
     }
-    .main__line {
+    .account__wrap--text {
+      display: flex;
+      flex-direction: column;
+    }
+    .account__wrap--text p {
+      margin: 0.2rem;
+      font-size: 1.2rem;
+    }
+    /* .main__line {
       display: block;
       height: 0.2rem;
       margin: 1rem 0;
       width: 100%;
       background-color: rgba(88, 88, 88, 0.5);
+    } */
+
+    .menu {
+      margin: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      border-top: solid 0.1rem rgba(88, 88, 88, 0.5);
+      border-bottom: solid 0.1rem rgba(88, 88, 88, 0.5);
+    }
+    .menu__btn {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      padding: 0.2rem 0;
+
+      text-decoration: none;
+      color: black;
+      border-top: solid 0.1rem rgba(88, 88, 88, 0.5);
+      border-bottom: solid 0.1rem rgba(88, 88, 88, 0.5);
+    }
+    .menu__btn:hover {
+      cursor: pointer;
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.678) 50%,
+        transparent
+      );
+      box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    }
+    .menu__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      object-fit: contain;
+      margin-right: 0.2rem;
+      opacity: 0.9;
     }
 
-    .main__info {
+    .info {
       border: solid black 1px;
+      /* display: flex;
+      justify-content: center; */
+    }
+    .info__wrap {
+      display: flex;
+    }
+    .info__wrap--col {
+      flex-direction: column;
+      align-items: center;
+    }
+    .info__text--font1 {
+      font-family: xbox360;
+      color: rgb(117, 194, 1);
+      text-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.8);
+      font-size: 3.5rem;
+    }
+    .info__text--font2 {
+      font-family: ogXbox;
+      color: orange;
+      text-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.8);
+      font-size: 3.5rem;
+    }
+    .info__list {
+      list-style: none;
+    }
+    .info__listItem {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+    .info__icon {
+      width: 2rem;
+      height: 2rem;
+      opacity: 0.9;
+      margin-right: 0.2rem;
+    }
+
+    .vid {
+      background: black;
+    }
+    .vid__video {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   </style>
 </html>
