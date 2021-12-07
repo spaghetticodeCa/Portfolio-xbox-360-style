@@ -43,63 +43,51 @@
           <div class="menu">
             <a href="" class="menu__btn"
               ><img class="menu__icon" src="icons/projectsIcon.svg" />
-              Projets</a
+              Messages</a
             >
             <a href="" class="menu__btn"
-              ><img class="menu__icon" src="icons/aboutMeIcon.svg" />À Propos</a
+              ><img class="menu__icon" src="icons/aboutMeIcon.svg" />Friends</a
             >
             <a href="" class="menu__btn"
-              ><img class="menu__icon" src="icons/contactMe.svg" />Me
-              Contacter</a
+              ><img class="menu__icon" src="icons/contactMe.svg" />Chat and
+              IM</a
             >
+          </div>
+          <div class="live__cont">
+            <div class="live__wrap">
+              <div class="live__circle"></div>
+              <div class="live__circle"></div>
+              <div class="live__circle"></div>
+              <div class="live__circle"></div>
+              <div class="live__circle"></div>
+              <div class="live__circle"></div>
+              <div class="live__circle"></div>
+              <div class="live__circle"></div>
+            </div>
+            <div class="live__wrap live__wrap--imgWrap">
+              <img
+                class="live__logo"
+                src="images/logo/xboxLive (3).svg"
+                alt=""
+              />
+            </div>
           </div>
           <!-- <span class="main__line" /></span> -->
         </div>
         <div class="info">
-          <div class="info__wrap info__wrap--col">
-            <h1 class="info__text--font1">MES</h1>
-            <h1 class="info__text--font2">COMPETENCES</h1>
+          <div class="info__wrap info__wrap--logo">
+            <!-- <h1 class="info__text--font1">XBOX</h1>
+            <h1 class="info__text--font2">LIVE</h1> -->
+            <img class="info__logo" src="images/logo/xboxLive (3).svg" alt="" />
           </div>
-          <div class="info__wrap">
-            <ul class="info__list">
-              <li class="info__listItem">
-                <img class="info__icon" src="icons/htmlIcon.svg" alt="" /> HTML
-              </li>
-              <li class="info__listItem">
-                <img class="info__icon" src="icons/cssIcon.svg" alt="" />CSS
-              </li>
-              <li class="info__listItem">
-                <img
-                  class="info__icon"
-                  src="icons/javascriptIcon.svg"
-                  alt=""
-                />JAVASCRIPT
-              </li>
-              <li class="info__listItem">
-                <img
-                  class="info__icon"
-                  src="icons/reactIcon.svg"
-                  alt=""
-                />REACT.JS
-              </li>
-              <li class="info__listItem">
-                <img
-                  class="info__icon"
-                  src="icons/firebaseIcon.svg"
-                  alt=""
-                />FIREBASE
-              </li>
-            </ul>
+          <hr class="info__line" />
+          <div class="info__wrap info__wrap--text">
+            <h3 class="info__title">Xbox Live</h3>
+            <p class="info__text">
+              Games. Tournaments. Entertainment. All the rewards. Endless
+              possibilities. What are you waiting for?
+            </p>
           </div>
-          <section class="vid">
-            <video
-              class="vid__video"
-              autoplay
-              loop
-              muted
-              src="videos/coding.mp4"
-            ></video>
-          </section>
         </div>
       </main>
     </div>
@@ -229,12 +217,17 @@
     .main__menu {
       border: solid black 1px;
       padding: 1rem;
+      display: grid;
+      grid-template-rows: 12rem 0fr 0fr;
     }
     .account {
       /* background: rgba(255, 255, 255, 0.3); */
       border-radius: 0.8rem;
       box-shadow: inset 0px 0px 1rem rgba(255, 255, 255, 0.5);
       border: solid 0.2rem rgba(88, 88, 88, 0.8);
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
     }
     .account:hover {
       cursor: pointer;
@@ -257,6 +250,7 @@
     .account__wrap {
       display: flex;
       align-items: center;
+      height: 100%;
     }
     .account__picture {
       width: 6rem;
@@ -317,18 +311,120 @@
       margin-right: 0.2rem;
       opacity: 0.9;
     }
+    .live__cont {
+      height: 12rem;
+      width: 100%;
+      background: #464c4a;
+      border-radius: 0.8rem;
+      box-shadow: inset 0px 0px 1rem rgba(255, 255, 255, 0.5);
+      border: solid 0.2rem rgba(88, 88, 88, 0.8);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .live__cont:hover {
+      cursor: pointer;
+      box-shadow: inset 0px 0px 1.8rem rgba(255, 255, 255, 0.95);
+    }
+    .live__wrap {
+      position: relative;
+      width: 30%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .live__wrap--imgWrap {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 0;
+    }
+    .live__logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.8));
+    }
+    .live__circle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      border: solid 0px #7fb42e;
+      transform: translateX(-50%);
+    }
+    .live__circle:nth-child(1) {
+      animation: circleRipple 4s linear infinite;
+    }
+    .live__circle:nth-child(2) {
+      animation: circleRipple 4s 0.4s linear infinite;
+    }
+    .live__circle:nth-child(3) {
+      animation: circleRipple 4s 0.8s linear infinite;
+    }
+    .live__circle:nth-child(4) {
+      animation: circleRipple 4s 1.2s linear infinite;
+    }
+    .live__circle:nth-child(5) {
+      animation: circleRipple 4s 2.2s linear infinite;
+    }
+    .live__circle:nth-child(6) {
+      animation: circleRipple 4s 2.6s linear infinite;
+    }
+    .live__circle:nth-child(7) {
+      animation: circleRipple 4s 3s linear infinite;
+    }
+    .live__circle:nth-child(8) {
+      animation: circleRipple 4s 3.4s linear infinite;
+    }
+
+    @keyframes circleRipple {
+      0% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border: solid 0px #7fb42e;
+      }
+      50% {
+        opacity: 1;
+        width: 10rem;
+        height: 10rem;
+        border: solid 5px #7fb42e;
+      }
+      100% {
+        opacity: 0;
+        width: 20rem;
+        height: 20rem;
+        border: solid 2px #7fb42e;
+      }
+    }
+
+    /**************************************** invo ***********************/
 
     .info {
       border: solid black 1px;
+      display: grid;
+      grid-template-rows: 12rem 0fr 0fr;
+      padding: 1rem;
+
       /* display: flex;
       justify-content: center; */
     }
     .info__wrap {
       display: flex;
     }
-    .info__wrap--col {
+    .info__wrap--logo {
       flex-direction: column;
       align-items: center;
+      padding: 3rem 6rem;
+    }
+    .info__logo {
+      width: 40%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.8));
     }
     .info__text--font1 {
       font-family: xbox360;
@@ -338,32 +434,31 @@
     }
     .info__text--font2 {
       font-family: ogXbox;
-      color: orange;
+      color: rgb(214, 139, 0);
       text-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.8);
       font-size: 3.5rem;
     }
-    .info__list {
-      list-style: none;
-    }
-    .info__listItem {
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-    }
-    .info__icon {
-      width: 2rem;
-      height: 2rem;
-      opacity: 0.9;
-      margin-right: 0.2rem;
-    }
-
-    .vid {
-      background: black;
-    }
-    .vid__video {
+    .info__line {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 0.2rem;
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(88, 88, 88, 0.5) 50%,
+        transparent
+      );
+      border: none;
+    }
+    .info__wrap--text {
+      height: 100%;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .info__title {
+      font-size: 1.5rem;
+    }
+    .info__text {
+      font-size: 1.2rem;
     }
   </style>
 </html>
