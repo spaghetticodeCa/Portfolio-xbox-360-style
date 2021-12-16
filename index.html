@@ -16,24 +16,31 @@
   </head>
   <body>
     <section class="tabsContainer">
-      <article class="onglet onglet--marketplace">
-        <p class="onglet__text">marketplace</p>
-        <div></div>
-        <img src="/images/refait les assets avec border.svg" class="test" />
+      <article class="onglet onglet--marketplace" onclick="playSound(audio1)">
+        <div class="test1"><p class="onglet__text">marketplace</p></div>
+        <!-- <img src="/images/refait les assets avec border.svg" class="test" /> -->
+        <div class="test"></div>
       </article>
-      <article class="onglet active onglet--xboxLive">
-        <p class="onglet__text">Xbox Live</p>
-        <div></div>
-        <img src="/images/refait les assets avec border.svg" class="test" />
+      <article
+        class="onglet active onglet--xboxLive"
+        onclick="playSound(audio1)"
+      >
+        <div class="test1"><p class="onglet__text">Xbox Live</p></div>
+        <div class="test"></div>
+
+        <!-- <img src="/images/refait les assets avec border.svg" class="test" /> -->
       </article>
-      <article class="onglet onglet--games">
-        <p class="onglet__text">games</p>
+      <article class="onglet onglet--games" onclick="playSound(audio2)">
+        <div class="test1"><p class="onglet__text">Games</p></div>
+        <div class="test"></div>
       </article>
-      <article class="onglet onglet--media">
-        <p class="onglet__text">media</p>
+      <article class="onglet onglet--media" onclick="playSound(audio3)">
+        <div class="test1"><p class="onglet__text">media</p></div>
+        <div class="test"></div>
       </article>
-      <article class="onglet onglet--system">
-        <p class="onglet__text">system</p>
+      <article class="onglet onglet--system" onclick="playSound(audio4)">
+        <div class="test1"><p class="onglet__text">system</p></div>
+        <div class="test"></div>
       </article>
     </section>
     <div class="xboxLiveCont">
@@ -117,6 +124,13 @@
       let tabs = document.querySelectorAll(".onglet");
 
       let audio1 = new Audio("/Menu Sounds/dash_BladeSwitch_1.wav");
+      let audio2 = new Audio("/Menu Sounds/dash_BladeSwitch_2.wav");
+      let audio3 = new Audio("/Menu Sounds/dash_BladeSwitch_3.wav");
+      let audio4 = new Audio("/Menu Sounds/dash_BladeSwitch_4.wav");
+
+      playSound = (audio) => {
+        audio.play();
+      };
       // console.log(tabs);
 
       tabs.forEach((element, index) => {
@@ -157,14 +171,6 @@
       align-items: center;
       background: #b4b8b6;
       flex-direction: column;
-    }
-
-    .tabsContainer {
-      min-height: 100vh;
-      width: 100%;
-      max-width: 1600px;
-      background: grey;
-      display: flex;
     }
 
     .ripple__container {
@@ -244,14 +250,22 @@
       }
     }
 
+    .tabsContainer {
+      min-height: 100vh;
+      width: 100%;
+      max-width: 1600px;
+      background: grey;
+      display: flex;
+    }
     .onglet {
-      width: 5rem;
+      position: relative;
+      width: 4rem;
 
       display: grid;
-      grid-template-columns: auto 5rem;
+      grid-template-columns: 4rem auto;
       transition: all linear 0.15s;
-      justify-items: center;
-      align-items: center;
+      /* justify-items: center;
+      align-items: center; */
     }
 
     .onglet--marketplace {
@@ -269,6 +283,16 @@
     .onglet--system {
       background: purple;
     }
+    .test1 {
+      background: cyan;
+      width: 100%;
+      height: 100%;
+    }
+    .test {
+      background: #ff11df;
+      width: 100%;
+      height: 100%;
+    }
 
     .onglet__text {
       writing-mode: vertical-lr;
@@ -279,13 +303,13 @@
     .active {
       width: 100%;
     }
-    .test {
+    /* .test {
       position: relative;
-      /* overflow: hidden; */
       width: 100%;
       height: 100%;
       background: orchid;
-    }
+      filter: drop-shadow(0 0 0.5rem black);
+    } */
     /* .test:before {
       position: absolute;
       top: 0;
